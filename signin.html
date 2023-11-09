@@ -59,7 +59,7 @@
         <center>
             <div class="container">
                 <h2>Signin</h2>
-                <form action="/login" method="post">
+                <form action="/login" method="post" onsubmit="handleFormSubmit(event)">
                     <label for="username">Username:</label>
                     <input type="text" id="username" name="username" placeholder="Enter your username" required>
 
@@ -69,8 +69,28 @@
                     <input type="submit" value="Login">
                 </form>
             </div>
+            <div id="notification"></div>
         </center>
     </div>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent form submission from reloading the page
+
+            // Get the form input values
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Perform any validation or processing of the form data here
+
+            var check = document.getElementById("notification");
+            check.textContent = "Entered username: " + username;
+
+            // You can perform further actions, such as making an AJAX request or redirecting to another page
+
+            // Reset the form
+            event.target.reset();
+        }
+    </script>
 </body>
 
 </html>
