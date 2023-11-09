@@ -57,19 +57,18 @@
 
     <div>
         <center>
-            <div class="container">
+            <div class="container" >
                 <h2>Signin</h2>
-                <form action="/login" method="post" onsubmit="handleFormSubmit(event)">
+                <form action="/login" method="post" onsubmit="handleFormSubmit(event)" style="width: 300px;">
                     <label for="username">Username:</label>
                     <input type="text" id="username" name="username" placeholder="Enter your username" required>
 
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" placeholder="Enter your password" required>
-
+                    <div id="notification" style="height: 50px;"></div>
                     <input type="submit" value="Login">
                 </form>
             </div>
-            <div id="notification"></div>
         </center>
     </div>
     <script>
